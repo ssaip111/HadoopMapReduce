@@ -1,0 +1,76 @@
+ Internet hosts span a wide range of size, speed, and function.
+         They range in size from small microprocessors through
+         workstations to mainframes and supercomputers.  In function,
+         they range from single-purpose hosts (such as terminal servers)
+         to full-service hosts that support a variety of online network
+         services, typically including remote login, file transfer, and
+         electronic mail.
+
+         The current Internet architecture is based on a set of
+         assumptions about the communication system.  The assumptions
+         most relevant to hosts are as follows:
+
+         (a)  The Internet is a network of networks.
+
+              Each host is directly connected to some particular
+              network(s); its connection to the Internet is only
+              conceptual.  Two hosts on the same network communicate
+              with each other using the same set of protocols that they
+              would use to communicate with hosts on distant networks.
+
+         (b)  Gateways don't keep connection state information.
+
+              To improve robustness of the communication system,
+              gateways are designed to be stateless, forwarding each IP
+              datagram independently of other datagrams.  As a result,
+              redundant paths can be exploited to provide robust service
+              in spite of failures of intervening gateways and networks.
+
+              All state information required for end-to-end flow control
+              and reliability is implemented in the hosts, in the
+              transport layer or in application programs.  All
+              connection control information is thus co-located with the
+              end points of the communication, so it will be lost only
+              if an end point fails.
+
+         (c)  Routing complexity should be in the gateways.
+
+              Routing is a complex and difficult problem, and ought to
+              be performed by the gateways, not the hosts.  An important
+
+
+              objective is to insulate host software from changes caused
+              by the inevitable evolution of the Internet routing
+              architecture.
+
+         (d)  The System must tolerate wide network variation.
+
+              A basic objective of the Internet design is to tolerate a
+              wide range of network characteristics -- e.g., bandwidth,
+              delay, packet loss, packet reordering, and maximum packet
+              size.  Another objective is robustness against failure of
+              individual networks, gateways, and hosts, using whatever
+              bandwidth is still available.  Finally, the goal is full
+              "open system interconnection": an Internet host must be
+              able to interoperate robustly and effectively with any
+              other Internet host, across diverse Internet paths.
+
+              Sometimes host implementors have designed for less
+              ambitious goals.  For example, the LAN environment is
+              typically much more benign than the Internet as a whole;
+              LANs have low packet loss and delay and do not reorder
+              packets.  Some vendors have fielded host implementations
+              that are adequate for a simple LAN environment, but work
+              badly for general interoperation.  The vendor justifies
+              such a product as being economical within the restricted
+              LAN market.  However, isolated LANs seldom stay isolated
+              for long; they are soon gatewayed to each other, to
+              organization-wide internets, and eventually to the global
+              Internet system.  In the end, neither the customer nor the
+              vendor is served by incomplete or substandard Internet
+              host software.
+
+              The requirements spelled out in this document are designed
+              for a full-function Internet host, capable of full
+              interoperation over an arbitrary Internet path.
+
